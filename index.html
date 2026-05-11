@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta-Pw Clone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        /* Side Menu Transition */
+        #side-menu { transition: transform 0.3s ease-in-out; }
+        .menu-open { transform: translateX(0); }
+        .menu-closed { transform: translateX(-100%); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden" onclick="toggleMenu()"></div>
+
+    <aside id="side-menu" class="fixed inset-y-0 left-0 w-64 bg-[#1a1a1a] text-white z-50 menu-closed flex flex-col">
+        <div class="p-4 flex items-center border-b border-gray-700">
+            <div class="w-8 h-8 rounded-full border-2 border-white flex items-center justify-center mr-3 font-bold">Δ</div>
+            <span class="text-xl font-semibold italic">Delta-Pw</span>
+        </div>
+        <nav class="flex-1 px-2 py-4 space-y-2">
+            <a href="#" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-800 rounded-lg"><i class="fa-solid fa-house w-6"></i> Home</a>
+            <a href="#" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-800 rounded-lg"><i class="fa-solid fa-clock-rotate-left w-6"></i> Today's Study</a>
+            <a href="#" class="flex items-center px-4 py-3 text-white bg-gray-800 rounded-lg"><i class="fa-solid fa-book w-6"></i> Batches</a>
+            <a href="#" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-800 rounded-lg"><i class="fa-solid fa-layer-group w-6"></i> My Batches</a>
+            <a href="#" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-800 rounded-lg"><i class="fa-solid fa-gift w-6"></i> Donate Batch</a>
+        </nav>
+    </aside>
+
+    <header class="bg-black text-white sticky top-0 z-30 h-14">
+        <div id="default-header" class="flex items-center justify-between h-full px-4">
+            <button onclick="toggleMenu()" class="text-white focus:outline-none"><i class="fa-solid fa-bars text-xl"></i></button>
+            <h1 class="text-lg font-semibold tracking-wide">Batches</h1>
+            <button onclick="toggleSearch()" class="text-white focus:outline-none"><i class="fa-solid fa-magnifying-glass text-xl"></i></button>
+        </div>
+        <div id="search-header" class="hidden items-center h-full px-2 bg-[#1a1a1a]">
+            <button onclick="toggleSearch()" class="p-2 text-gray-300"><i class="fa-solid fa-chevron-left text-lg"></i></button>
+            <input type="text" id="search-input" placeholder="Search for a batch..." class="w-full bg-transparent text-white px-2 py-1 focus:outline-none" oninput="filterBatches()">
+            <button onclick="clearSearch()" id="clear-search-btn" class="p-2 text-gray-400 hidden"><i class="fa-solid fa-xmark text-lg"></i></button>
+        </div>
+    </header>
+
+    <main class="max-w-md mx-auto p-4 pb-20">
+        
+        <div class="flex items-center justify-between gap-2 mb-4">
+            <button class="flex-1 bg-white border border-gray-200 rounded-lg py-2 flex items-center justify-center gap-2 text-sm font-medium shadow-sm">
+                <i class="fa-solid fa-filter text-gray-500"></i> Filter
+            </button>
+            <button onclick="copyCode()" class="flex-[1.5] bg-white border border-gray-200 rounded-lg py-2 flex items-center justify-center gap-2 text-sm font-medium shadow-sm relative">
+                <i class="fa-regular fa-copy text-gray-500"></i> <span id="promo-code">4964YRAZ</span> <span class="text-yellow-500">%</span>
+                <div id="copy-toast" class="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs py-1 px-2 rounded opacity-0 transition-opacity duration-300 pointer-events-none">Copied!</div>
+            </button>
+            <button class="bg-white border border-gray-200 rounded-lg p-2 aspect-square flex items-center justify-center shadow-sm">
+                <i class="fa-solid fa-circle-info text-gray-400 text-lg"></i>
+            </button>
+        </div>
+
+        <div class="bg-orange-50 border border-orange-100 rounded-xl p-4 mb-4 shadow-sm relative overflow-hidden">
+            <div class="absolute -top-4 -left-4 text-red-400 opacity-20 text-6xl"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <h2 class="text-red-600 font-bold text-lg mb-1 flex items-center gap-2">
+                <i class="fa-solid fa-triangle-exclamation"></i> Site may be banned anytime
+            </h2>
+            <p class="text-gray-600 text-sm mb-3 relative z-10">Join our Telegram to stay updated and never miss important announcements.</p>
+            <div class="flex gap-2 relative z-10">
+                <button class="flex-1 bg-red-500 text-white rounded-lg py-2 text-sm font-medium flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-telegram"></i> Main Channel
+                </button>
+                <button class="flex-1 bg-white border border-gray-200 text-gray-700 rounded-lg py-2 text-sm font-medium flex items-center justify-center gap-2">
+                    <i class="fa-regular fa-comment"></i> Backup
+                </button>
+            </div>
+        </div>
+
+        <div id="batches-container" class="space-y-4">
+            </div>
+
+    </main>
+
+    <script>
+        // Sample Batch Data
+        const batches = [
+            {
+                title: "Saarthi Lakshya JEE 2027",
+                bgColor: "bg-yellow-100",
+                imgSrc: "https://placehold.co/400x150/fef08a/000000?text=Saarthi+Lakshya",
+                tags: "LIVE DOUBT SUPPORT"
+            },
+            {
+                title: "Udaan 2027 (Class 10th)",
+                bgColor: "bg-pink-100",
+                imgSrc: "https://placehold.co/400x150/fce7f3/000000?text=Udaan+Team",
+                tags: null
+            },
+            {
+                title: "Arjuna JEE 2026+ Lakshya JEE 2027",
+                bgColor: "bg-cyan-100",
+                imgSrc: "https://placehold.co/400x150/cffafe/000000?text=Arjuna+Lakshya",
+                tags: null
+            },
+            {
+                title: "Arjuna NEET 2027",
+                bgColor: "bg-blue-100",
+                imgSrc: "https://placehold.co/400x150/dbeafe/000000?text=Arjuna+NEET",
+                tags: null
+            },
+            {
+                title: "Lakshya NEET 2027",
+                bgColor: "bg-emerald-100",
+                imgSrc: "https://placehold.co/400x150/d1fae5/000000?text=Lakshya+NEET",
+                tags: null
+            }
+        ];
+
+        // Function to render batch cards
+        function renderBatches(data) {
+            const container = document.getElementById('batches-container');
+            container.innerHTML = ''; // Clear current
+
+            if(data.length === 0) {
+                container.innerHTML = '<p class="text-center text-gray-500 mt-8">No batches found.</p>';
+                return;
+            }
+
+            data.forEach(batch => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100';
+                
+                card.innerHTML = `
+                    <div class="relative ${batch.bgColor} pt-4 flex flex-col items-center justify-end h-32">
+                        <div class="absolute top-2 left-2 bg-orange-500 text-white text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1">
+                            <i class="fa-solid fa-fire text-[8px]"></i> Trending
+                        </div>
+                        <img src="${batch.imgSrc}" alt="${batch.title}" class="h-24 object-cover object-bottom">
+                        ${batch.tags ? `<div class="absolute bottom-0 bg-[#5d4037] text-white text-xs font-bold px-3 py-1 rounded-t-md tracking-wider">${batch.tags}</div>` : ''}
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-[15px] mb-4 text-gray-800">${batch.title}</h3>
+                        <div class="flex gap-3">
+                            <button class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white py-2.5 rounded-lg text-sm font-medium flex items-center justify-center gap-2 transition-colors">
+                                <i class="fa-solid fa-book-open"></i> Study
+                            </button>
+                            <button class="flex-1 bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 py-2.5 rounded-lg text-sm font-medium flex items-center justify-center gap-2 transition-colors">
+                                <i class="fa-solid fa-crown text-yellow-500"></i> Enroll
+                            </button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Search Logic
+        function filterBatches() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const clearBtn = document.getElementById('clear-search-btn');
+            
+            if (query.length > 0) {
+                clearBtn.classList.remove('hidden');
+            } else {
+                clearBtn.classList.add('hidden');
+            }
+
+            const filtered = batches.filter(batch => batch.title.toLowerCase().includes(query));
+            renderBatches(filtered);
+        }
+
+        function clearSearch() {
+            document.getElementById('search-input').value = '';
+            document.getElementById('clear-search-btn').classList.add('hidden');
+            renderBatches(batches);
+            document.getElementById('search-input').focus();
+        }
+
+        // UI Toggles
+        function toggleSearch() {
+            const defaultHeader = document.getElementById('default-header');
+            const searchHeader = document.getElementById('search-header');
+            const searchInput = document.getElementById('search-input');
+
+            if (searchHeader.classList.contains('hidden')) {
+                defaultHeader.classList.add('hidden');
+                defaultHeader.classList.remove('flex');
+                searchHeader.classList.remove('hidden');
+                searchHeader.classList.add('flex');
+                searchInput.focus();
+            } else {
+                searchHeader.classList.add('hidden');
+                searchHeader.classList.remove('flex');
+                defaultHeader.classList.remove('hidden');
+                defaultHeader.classList.add('flex');
+                clearSearch(); // Reset when closing
+            }
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('side-menu');
+            const overlay = document.getElementById('overlay');
+            
+            if (menu.classList.contains('menu-closed')) {
+                menu.classList.remove('menu-closed');
+                menu.classList.add('menu-open');
+                overlay.classList.remove('hidden');
+            } else {
+                menu.classList.remove('menu-open');
+                menu.classList.add('menu-closed');
+                overlay.classList.add('hidden');
+            }
+        }
+
+        // Copy logic
+        function copyCode() {
+            const code = document.getElementById('promo-code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                const toast = document.getElementById('copy-toast');
+                toast.classList.remove('opacity-0');
+                setTimeout(() => {
+                    toast.classList.add('opacity-0');
+                }, 2000);
+            });
+        }
+
+        // Initial Render
+        renderBatches(batches);
+    </script>
+</body>
+</html>
+
