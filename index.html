@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chor Website Clone Test</title>
+    <!-- HLS.js library import (Video chalane ke liye) -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f9; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        video { width: 100%; border: 2px solid red; border-radius: 5px; margin-top: 10px; background: black; }
+        .test-box { margin-top: 20px; padding: 15px; background: #e9ecef; border-radius: 5px; }
+        button { background: #007bff; color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 5px; font-weight: bold; }
+        button:hover { background: #0056b3; }
+        #api-result { margin-top: 10px; white-space: pre-wrap; background: #222; color: #0f0; padding: 10px; border-radius: 5px; max-height: 300px; overflow-y: auto; display: none; font-family: monospace; }
+    </style>
+</head>
+<body>
 
+    <div class="container">
+        <h2>🔴 Live Class Bypass Test</h2>
+        <p>Agar niche video chal gaya, toh samajh lo koi bhi tumhara direct link chura kar use kar sakta hai!</p>
+        
+        <!-- Video Player -->
+        <video id="video" controls></video>
+
+        <div class="test-box">
+            <h3>API Data Theft Test</h3>
+            <p>Check karte hain ki API public hai ya nahi:</p>
+            <button onclick="testAPI()">Test API Fetch</button>
+            <div id="api-result"></div>
+        </div>
+    </div>
+
+    <script>
+        // =========================================================
+        // 🚨 YAHAN APNE LINKS DAALO (F12 NETWORK TAB SE NIKAL KAR) 🚨
+        // =========================================================
+        
+        // 1. Apna m3u8 ya mp4 video link yahan daalo
+        const VIDEO_LINK = "https://TUMHARI_WEBSITE.com/path/to/video.m3u8"; 
+
+        // 2. Apni Batch list/videos ka API link yahan daalo
+        const API_LINK = "https://TUMHARI_WEBSITE.com/api/get-batches-data"; 
+        
+        // =========================================================
+
+
+        // --- Video Play Logic ---
+        var video = document.getElementById('video');
+        if (Hls.isSupported() && VIDEO_LINK.includes('.m3u8')) {
+            var hls = new Hls();
+            hls.loadSource(VIDEO_LINK);
+            hls.attachMedia(video);
+        } else {
+            // mp4 file ke liye
+            video.src = VIDEO_LINK;
+        }
+
+        // --- API Fetch Logic ---
+        async function testAPI() {
+            const resultBox = document.getElementById('api-result');
+            resultBox.style.display = 'block';
+            resultBox.innerText = "Fetching data from API...\n\n";
+            
+            try {
+                const response = await fetch(API_LINK);
+                if (!response.ok) {
+                    throw new Error("HTTP Error Status: " + response.status);
+                }
+                const data = await response.json();
+                resultBox.innerText += "✅ SUCCESS! Data mil gaya (Security Alert! Chor aise hi nikal rahe hain):\n\n" + JSON.stringify(data, null, 2);
+            } catch (error) {
+                resultBox.innerText += "❌ BLOCKED! (Good News, backend frontend ko rok raha hai):\n\n" + error.message;
+            }
+        }
+    </script>
+</body>
+</html>
