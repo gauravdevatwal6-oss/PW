@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="https://i.postimg.cc/KzTy05Wm/IMG-20250301-092318-614.jpg" type="image/x-icon">
+<title>RolexCoderZ</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg:      #0c0c0e;
+  --surface: #111115;
+  --border:  #222228;
+  --gold:    #f5c842;
+  --gold2:   #e8a020;
+  --dim:     #44444e;
+  --muted:   #666672;
+  --text:    #d4d4d8;
+  --white:   #fafafa;
+  --tg:      #2AABEE;
+  --tg2:     #1a8ecb;
+  --ig:      #E1306C;
+  --ig2:     #F77737;
+  --ig3:     #C13584;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+  min-height: 100vh;
+  cursor: none;
+}
+
+#cur {
+  position: fixed;
+  width: 10px; height: 10px;
+  background: var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%,-50%);
+  transition: width .18s, height .18s, opacity .18s;
+  mix-blend-mode: difference;
+}
+#cur.big   { width: 34px; height: 34px; opacity: .35; }
+#cur.tgbig { width: 34px; height: 34px; opacity: .35; background: var(--tg); }
+#cur.igbig { width: 34px; height: 34px; opacity: .35; background: linear-gradient(135deg, var(--ig2), var(--ig), var(--ig3)); }
+
+body::after {
+  content:'';
+  position:fixed; inset:0;
+  background: repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.03) 2px,rgba(0,0,0,.03) 4px);
+  pointer-events:none; z-index:100;
+}
+body::before {
+  content:'';
+  position:fixed; inset:0;
+  background-image:
+    linear-gradient(var(--border) 1px,transparent 1px),
+    linear-gradient(90deg,var(--border) 1px,transparent 1px);
+  background-size:44px 44px;
+  opacity:.3;
+  pointer-events:none; z-index:0;
+}
+
+.wrap {
+  position:relative; z-index:1;
+  max-width:680px; margin:0 auto; padding:0 24px;
+}
+
+header {
+  position:relative; z-index:10;
+  padding:44px 24px 0;
+  max-width:680px; margin:0 auto;
+}
+.hrow { display:flex; align-items:baseline; gap:8px; margin-bottom:5px; }
+.logo { font-family:'Space Mono',monospace; font-size:1.25rem; font-weight:700; color:var(--white); letter-spacing:-.02em; }
+.logo em { color:var(--gold); font-style:normal; }
+.blink { display:inline-block; width:2px; height:1.1em; background:var(--gold); vertical-align:middle; margin-left:2px; animation:bl 1.1s step-end infinite; }
+@keyframes bl { 0%,100%{opacity:1} 50%{opacity:0} }
+.hsub { font-size:.68rem; color:var(--dim); letter-spacing:.04em; padding-left:1px; }
+.hsub s { color:var(--gold); text-decoration:none; opacity:.55; }
+
+.sep { height:1px; background:var(--border); margin:28px 0; position:relative; z-index:1; }
+
+.intro { padding-bottom:8px; }
+.prompt { font-size:.66rem; color:var(--dim); margin-bottom:16px; display:flex; align-items:center; gap:8px; }
+.prompt::before { content:'$'; color:var(--gold); font-size:.82rem; }
+.intro h2 { font-family:'Space Mono',monospace; font-size:clamp(1.45rem,4vw,2.1rem); font-weight:700; color:var(--white); line-height:1.15; letter-spacing:-.03em; margin-bottom:14px; }
+.intro h2 .a { color:var(--gold); }
+.intro p { font-size:.75rem; color:var(--muted); line-height:1.9; max-width:460px; }
+
+.cards { display:flex; flex-direction:column; gap:10px; margin-top:8px; }
+.card {
+  display:flex; align-items:center; gap:16px;
+  padding:18px 16px;
+  background:transparent;
+  border:1px solid var(--border);
+  border-radius:5px;
+  text-decoration:none; color:inherit;
+  position:relative; overflow:hidden;
+  transition:border-color .2s, background .2s;
+  cursor:none;
+  opacity:0; transform:translateY(10px);
+  animation:rise .4s ease forwards;
+}
+.card:nth-child(1){animation-delay:.1s}
+.card:nth-child(2){animation-delay:.2s}
+.card:nth-child(3){animation-delay:.3s}
+.card:nth-child(4){animation-delay:.4s}
+.card:nth-child(5){animation-delay:.5s}
+@keyframes rise { to{opacity:1;transform:translateY(0)} }
+
+.card::before { content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background:var(--gold); opacity:0; transition:opacity .2s; }
+.card:hover { border-color:rgba(245,200,66,.22); background:rgba(245,200,66,.025); }
+.card:hover::before { opacity:1; }
+
+.cnum { font-size:.6rem; color:var(--dim); min-width:18px; align-self:flex-start; padding-top:3px; }
+.cimg { width:46px; height:46px; border-radius:7px; object-fit:cover; border:1px solid var(--border); background:var(--surface); flex-shrink:0; filter:grayscale(15%); transition:filter .2s; }
+.card:hover .cimg { filter:grayscale(0%); }
+.cbody { flex:1; }
+.cbody h3 { font-family:'Space Mono',monospace; font-size:.85rem; font-weight:700; color:var(--white); letter-spacing:-.01em; margin-bottom:4px; }
+.cbody .meta { font-size:.62rem; color:var(--dim); letter-spacing:.04em; }
+.cbody .meta .d { color:var(--gold); margin:0 5px; opacity:.4; }
+.curl { font-size:.58rem; color:var(--dim); opacity:0; transition:opacity .2s; white-space:nowrap; }
+.card:hover .curl { opacity:1; color:var(--gold); }
+
+footer {
+  position:relative; z-index:1;
+  max-width:680px; margin:40px auto 0;
+  padding:22px 24px 44px;
+  border-top:1px solid var(--border);
+  display:flex; align-items:center; justify-content:space-between;
+}
+.fl { font-size:.62rem; color:var(--dim); }
+.fl strong { color:var(--gold); }
+.fr { font-size:.58rem; color:var(--dim); opacity:.4; }
+.intro { opacity:0; animation:rise .5s ease forwards .05s; }
+
+/* ═══════════════════════════════════
+   TELEGRAM POPUP
+═══════════════════════════════════ */
+
+#tg-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.75);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  z-index: 9990;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+}
+#tg-overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#tg-modal {
+  position: relative;
+  width: 100%;
+  max-width: 430px;
+  background: #13131a;
+  border: 1px solid rgba(42,171,238,.28);
+  border-radius: 8px;
+  overflow: hidden;
+  transform: translateY(28px) scale(.96);
+  transition: transform .4s cubic-bezier(.34,1.56,.64,1);
+  box-shadow:
+    0 0 0 1px rgba(42,171,238,.06),
+    0 28px 80px rgba(0,0,0,.75),
+    0 0 60px rgba(42,171,238,.07);
+}
+#tg-overlay.show #tg-modal {
+  transform: translateY(0) scale(1);
+}
+
+#tg-modal::after {
+  content:'';
+  position:absolute; inset:0;
+  background: repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,.04) 3px,rgba(0,0,0,.04) 4px);
+  pointer-events:none; border-radius:8px; z-index:0;
+}
+
+.tg-bar {
+  height: 3px;
+  background: linear-gradient(90deg, var(--tg2), var(--tg), #6ee4ff, var(--tg2));
+  background-size: 300% 100%;
+  animation: barshine 2.5s linear infinite;
+}
+@keyframes barshine {
+  0%   { background-position: 0%   0%; }
+  100% { background-position: 300% 0%; }
+}
+
+#tg-close {
+  position: absolute; top: 14px; right: 14px;
+  width: 28px; height: 28px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: none;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--dim);
+  font-size: .72rem;
+  font-family: 'Space Mono', monospace;
+  transition: background .2s, border-color .2s, color .2s;
+  z-index: 2;
+}
+#tg-close:hover {
+  background: rgba(255,255,255,.1);
+
+--- PACKAGE ---
+{
+  "name": "marketing",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev --port 3000",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.0.6",
+    "@tanstack/react-router": "^1.163.3",
+    "@tanstack/react-start": "^1.166.1",
+    "@tanstack/router-plugin": "^1.164.0",
+    "highlight.js": "^11.11.1",
+    "lucide-react": "^0.576.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "tailwindcss": "^4.0.6",
+    "vite-tsconfig-paths": "^6.0.2",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@netlify/vite-plugin-tanstack-start": "^1.2.14",
+    "@tailwindcss/vite": "^4.0.6",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.0.4",
+    "lucide-react": "^0.576.0",
+    "tailwindcss": "^4.0.6",
+    "typescript": "^5.7.2",
+    "rimraf": "^6.0.1",
+    "vite": "^7.1.7"
+  }
+}
+
+--- INDEX ---
+import { createFileRoute } from '@tanstack/react-router'
+import { useState } from 'react'
+
+export const Route = createFileRoute('/')({
+  component: EBooksLibrary,
+})
+
+const books = [
+  {
+    id: 1,
+    title: 'The Great Gatsby',
+    author: 'F. Scott Fitzgerald',
+    genre: 'Fiction',
+    cover: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=400&fit=crop',
+    rating: 4.5,
+  },
+  {
+    id: 2,
+    title: 'A Brief History of Time',
+    author: 'Stephen Hawking',
+    genre: 'Science',
+    cover: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?w=300&h=400&fit=crop',
+    rating: 4.8,
+  },
+  {
+    id: 3,
+    title: 'Sapiens',
+    author: 'Yuval Noah Harari',
+    genre: 'History',
+    cover: 'https://images.unsplash.com/photo-1589998059171-988d887df646?w=300&h=400&fit=crop',
+    rating: 4.7,
+  },
+  {
+    id: 4,
+    title: 'Clean Code',
+    author: 'Robert C. Martin',
+    genre: 'Technology',
+    cover: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=300&h=400&fit=crop',
+    rating: 4.6,
+  },
+  {
+    id: 5,
+    title: 'Atomic Habits',
+    author: 'James Clear',
+    genre: 'Non-Fiction',
+    cover: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300&h=400&fit=crop',
+    rating: 4.9,
+  },
+  {
+    id: 6,
+    title: 'Dune',
+    author: 'Frank Herbert',
+    genre: 'Fiction',
+    cover: 'https://images.unsplash.com/photo-1629992101753-56d196c8aabb?w=300&h=400&fit=crop',
+    rating: 4.8,
+  },
+]
+
+const categories = [
+  { name: 'Fiction', icon: '📖', count: 12
+... [truncated]
