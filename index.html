@@ -1,1 +1,254 @@
+<body>
 
+<div id="cur"></div>
+
+<!-- ══ PWA INSTALL BANNER ══ -->
+<div id="pwa-banner">
+  <!-- close X button -->
+  <button id="pwa-close-btn" onmouseenter="bc()" onmouseleave="sc()" onclick="document.getElementById('pwa-banner').classList.remove('show'); deferredPrompt = null;" aria-label="Close">✕</button>
+
+  <div class="pwa-inner">
+    <!-- icon -->
+    <div class="pwa-icon-wrap">
+      <div class="pwa-icon">
+        <img src="https://i.postimg.cc/KzTy05Wm/IMG-20250301-092318-614.jpg" alt="RolexCoderZ">
+      </div>
+      <div class="pwa-icon-ring"></div>
+    </div>
+
+    <!-- text -->
+    <div class="pwa-text">
+      <div class="pwa-eyebrow">
+        <span class="pwa-eyebrow-dot"></span>
+        install_app
+      </div>
+      <div class="pwa-title">RolexCoderZ</div>
+      <div class="pwa-sub">Fast · Education · Free</div>
+
+    </div>
+
+    <!-- install btn -->
+    <div class="pwa-actions">
+      <button id="pwa-install-btn" onmouseenter="bc()" onmouseleave="sc()">
+        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+        <span>Install</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- hidden btn kept for JS compatibility -->
+  <button id="pwa-dismiss-btn" style="display:none"></button>
+</div>
+<!-- ════════════════════════ -->
+
+<!-- ══ TELEGRAM POPUP ══ -->
+<div id="tg-overlay">
+  <div id="tg-modal">
+    <div class="tg-bar"></div>
+    <button id="tg-close" onmouseenter="bc()" onmouseleave="sc()" onclick="closePopup()">✕</button>
+
+    <div class="tg-inner">
+
+      <div class="tg-head">
+        <div class="tg-icon">
+          <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        </div>
+        <div class="tg-title-block">
+          <div class="tg-eyebrow"><span class="live-dot"></span>website_updates</div>
+          <div class="tg-title">Join our Telegram!</div>
+        </div>
+      </div>
+
+      <div class="tg-desc">
+        Website updates, new platforms, announcements &amp; more — sabse pehle Telegram pe milega.
+        <br><br>
+        Telegram channel ban ho gaya hai — koi issue ho toh Instagram pe message karo. 🚀
+      </div>
+
+      <!-- countdown bar -->
+      <div class="tg-prog-wrap">
+        <div class="tg-prog-row">
+          <span class="tg-prog-lbl">auto_close_in</span>
+          <span id="tg-cd">8s</span>
+        </div>
+        <div class="tg-prog-track">
+          <div id="tg-fill" style="--d:8s"></div>
+        </div>
+      </div>
+
+      <!-- buttons -->
+      <div class="tg-actions">
+        <a href="https://t.me/+R2qw9858zEoyNDQ1"
+           class="btn-join"
+           target="_blank"
+           onmouseenter="tgbc()" onmouseleave="sc()"
+           onclick="onJoin()">
+          <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        </div>
+        <div class="tg-title-block">
+          <div class="tg-eyebrow"><span class="live-dot"></span>website_updates</div>
+          <div class="tg-title">Join our Telegram!</div>
+        </div>
+      </div>
+
+      <div class="tg-desc">
+        Website updates, new platforms, announcements &amp; more — sabse pehle Telegram pe milega.
+        <br><br>
+        Telegram channel ban ho gaya hai — koi issue ho toh Instagram pe message karo. 🚀
+      </div>
+
+      <!-- countdown bar -->
+      <div class="tg-prog-wrap">
+        <div class="tg-prog-row">
+          <span class="tg-prog-lbl">auto_close_in</span>
+          <span id="tg-cd">8s</span>
+        </div>
+        <div class="tg-prog-track">
+          <div id="tg-fill" style="--d:8s"></div>
+        </div>
+      </div>
+
+      <!-- buttons -->
+      <div class="tg-actions">
+        <a href="https://t.me/+R2qw9858zEoyNDQ1"
+           class="btn-join"
+           target="_blank"
+           onmouseenter="tgbc()" onmouseleave="sc()"
+           onclick="onJoin()">
+          <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          Join Now ↗
+        </a>
+        <button class="btn-later"
+                onmouseenter="bc()" onmouseleave="sc()"
+                onclick="closePopup()">Maybe Later</button>
+      </div>
+
+      <!-- instagram alt contact -->
+      <a href="https://www.instagram.com/rolexcoderz.in?igsh=OWdjMjhuZjNmdzk="
+         class="btn-insta"
+         target="_blank"
+         rel="noopener"
+         style="margin-bottom:16px;"
+         onmouseenter="igbc()" onmouseleave="sc()">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Message on Instagram ↗
+      </a>
+
+      <!-- don't show again -->
+      <div class="tg-dont" onmouseenter="bc()" onmouseleave="sc()">
+        <input type="checkbox" id="dontshow">
+        <label for="dontshow">Don't show me again today</label>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- ══════════════════════ -->
+
+<header>
+  <div class="hrow">
+    <span class="logo">Rolex<em>CoderZ</em></span>
+    <span class="blink"></span>
+  </div>
+  <div class="hsub"><s>~/</s>platforms</div>
+</header>
+
+<div class="wrap">
+  <div class="sep"></div>
+
+  <div class="intro">
+    <div class="prompt">select_platform</div>
+    <h2>Pick your<br><span class="a">institute.</span></h2>
+    <p>Direct access to course platforms.<br>Click a card to open.</p>
+  </div>
+
+  <div class="sep"></div>
+
+  <div class="cards">
+
+    <a href="https://rolexcoderz.com/PW" class="card" target="_blank"
+       onmouseenter="bc()" onmouseleave="sc()">
+      <span class="cnum">01</span>
+      <img class="cimg"
+        src="https://upload.wikimedia.org/wikipedia/commons/7/76/Physics_wallah_logo.jpg"
+        alt="PW" onerror="this.style.display='none'">
+      <div class="cbody">
+        <h3>Physics Wallah</h3>
+        <div class="meta">ALL Classes<span class="d">·</span>Education</div>
+      </div>
+      <span class="curl">rolexcoderz.com/PW ↗</span>
+    </a>
+
+    <a href="https://rolexcoderz.com/VT" class="card" target="_blank"
+       onmouseenter="bc()" onmouseleave="sc()">
+      <span class="cnum">02</span>
+      <img class="cimg"
+        src="https://nocache-appxdb-v2.classx.co.in/subject/2026-02-24-0.8461171343418096.png"
+        alt="VA" onerror="this.style.display='none'">
+      <div class="cbody">
+        <h3>Vibrant Academy</h3>
+        <div class="meta">JEE<span class="d">·</span>Education</div>
+      </div>
+      <span class="curl">rolexcoderz.com/VT ↗</span>
+    </a>
+
+    <a href="https://RolexCoderZ.com/NT" class="card" target="_blank"
+       onmouseenter="bc()" onmouseleave="sc()">
+      <span class="cnum">03</span>
+      <img class="cimg"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1mUiY27Zw1lOwzgyGbwpdWlVgzDEZGmrfjfZqT0XGew&s"
+        alt="NT" onerror="this.style.display='none'">
+      <div class="cbody">
+        <h3>Next Toppers</h3>
+        <div class="meta">Board Exams<span class="d">·</span>Education</div>
+      </div>
+      <span class="curl">rolexcoderz.com/NT ↗</span>
+    </a>
+
+    <a href="https://RolexCoderZ.com/MissionJeet" class="card" target="_blank"
+       onmouseenter="bc()" onmouseleave="sc()">
+      <span class="cnum">04</span>
+      <img class="cimg"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXhmAX6UC18CYhwU2a6f7gn9E5WE0g4hzSQK2zyH_nVA&s"
+        alt="MJ" onerror="this.style.display='none'">
+      <div class="cbody">
+        <h3>Mission Jeet</h3>
+        <div class="meta">JEE / NEET<span class="d">·</span>Education</div>
+      </div>
+      <span class="curl">rolexcoderz.com/MissionJeet ↗</span>
+    </a>
+
+    <a href="https://rolexcoderz.com/AR/" class="card" target="_blank"
+       onmouseenter="bc()" onmouseleave="sc()">
+      <span class="cnum">05</span>
+      <img class="cimg"
+        src="https://i.postimg.cc/L5t0Dv7p/favicon.png"
+        alt="AR" onerror="this.style.display='none'">
+      <div class="cbody">
+        <h3>English Speaking Course by Aleena Rais</h3>
+        <div class="meta">Grammar<span class="d">·</span>Education</div>
+      </div>
+      <span class="curl">rolexcoderz.com/AleenaRais ↗</span>
+    </a>
+    
+    <a href="#" class="card" target="_blank"
+       onmouseenter="bc()" onmouseleave="sc()">
+      <span class="cnum">06</span>
+      <img class="cimg"
+        src="https://cdn.brandfetch.io/ide4H8OK32/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1681979686468"
+        alt="UC" onerror="this.style.display='none'">
+      <div class="cbody">
+        <h3>Unacademy</h3>
+        <div class="meta">Neet/Jee<span class="d">·</span>Education</div>
+      </div>
+      <span class="curl">rolexcoderz.com/UC ↗</span>
+    </a>
+    
+    <a href="https://rolexcoderz.com/Pi/" class="card" target="_blank"
+       onmouseenter="bc()" onmouseleave="sc()">
+      <span class="cnum">07</span>
+      <img class="cimg"
+        src="https://upload.wikimedia.org/wikipedia/commons/7/76/Physics_wallah_logo.jpg"
+        alt="Pi" onerror="this.style.display='none'">
+      <div cl
+... [truncated]
