@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="https://i.postimg.cc/KzTy05Wm/IMG-20250301-092318-614.jpg" type="image/x-icon" />
-    <title>
-      RolexCoderZ
-    </title>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet" />
-    <style>
-      * { margin: 0; padding: 0; box-sizing: border-box; }
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="https://i.postimg.cc/KzTy05Wm/IMG-20250301-092318-614.jpg" type="image/x-icon">
+<title>RolexCoderZ</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
   --bg:      #0c0c0e;
@@ -33,7 +31,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: &#39;JetBrains Mono&#39;, monospace;
+  font-family: 'JetBrains Mono', monospace;
   min-height: 100vh;
   cursor: none;
 }
@@ -54,13 +52,13 @@ body {
 #cur.igbig { width: 34px; height: 34px; opacity: .35; background: linear-gradient(135deg, var(--ig2), var(--ig), var(--ig3)); }
 
 body::after {
-  content:&#39;&#39;;
+  content:'';
   position:fixed; inset:0;
   background: repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.03) 2px,rgba(0,0,0,.03) 4px);
   pointer-events:none; z-index:100;
 }
 body::before {
-  content:&#39;&#39;;
+  content:'';
   position:fixed; inset:0;
   background-image:
     linear-gradient(var(--border) 1px,transparent 1px),
@@ -81,7 +79,7 @@ header {
   max-width:680px; margin:0 auto;
 }
 .hrow { display:flex; align-items:baseline; gap:8px; margin-bottom:5px; }
-.logo { font-family:&#39;Space Mono&#39;,monospace; font-size:1.25rem; font-weight:700; color:var(--white); letter-spacing:-.02em; }
+.logo { font-family:'Space Mono',monospace; font-size:1.25rem; font-weight:700; color:var(--white); letter-spacing:-.02em; }
 .logo em { color:var(--gold); font-style:normal; }
 .blink { display:inline-block; width:2px; height:1.1em; background:var(--gold); vertical-align:middle; margin-left:2px; animation:bl 1.1s step-end infinite; }
 @keyframes bl { 0%,100%{opacity:1} 50%{opacity:0} }
@@ -92,8 +90,8 @@ header {
 
 .intro { padding-bottom:8px; }
 .prompt { font-size:.66rem; color:var(--dim); margin-bottom:16px; display:flex; align-items:center; gap:8px; }
-.prompt::before { content:&#39;$&#39;; color:var(--gold); font-size:.82rem; }
-.intro h2 { font-family:&#39;Space Mono&#39;,monospace; font-size:clamp(1.45rem,4vw,2.1rem); font-weight:700; color:var(--white); line-height:1.15; letter-spacing:-.03em; margin-bottom:14px; }
+.prompt::before { content:'$'; color:var(--gold); font-size:.82rem; }
+.intro h2 { font-family:'Space Mono',monospace; font-size:clamp(1.45rem,4vw,2.1rem); font-weight:700; color:var(--white); line-height:1.15; letter-spacing:-.03em; margin-bottom:14px; }
 .intro h2 .a { color:var(--gold); }
 .intro p { font-size:.75rem; color:var(--muted); line-height:1.9; max-width:460px; }
 
@@ -118,7 +116,7 @@ header {
 .card:nth-child(5){animation-delay:.5s}
 @keyframes rise { to{opacity:1;transform:translateY(0)} }
 
-.card::before { content:&#39;&#39;; position:absolute; left:0; top:0; bottom:0; width:2px; background:var(--gold); opacity:0; transition:opacity .2s; }
+.card::before { content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background:var(--gold); opacity:0; transition:opacity .2s; }
 .card:hover { border-color:rgba(245,200,66,.22); background:rgba(245,200,66,.025); }
 .card:hover::before { opacity:1; }
 
@@ -126,7 +124,7 @@ header {
 .cimg { width:46px; height:46px; border-radius:7px; object-fit:cover; border:1px solid var(--border); background:var(--surface); flex-shrink:0; filter:grayscale(15%); transition:filter .2s; }
 .card:hover .cimg { filter:grayscale(0%); }
 .cbody { flex:1; }
-.cbody h3 { font-family:&#39;Space Mono&#39;,monospace; font-size:.85rem; font-weight:700; color:var(--white); letter-spacing:-.01em; margin-bottom:4px; }
+.cbody h3 { font-family:'Space Mono',monospace; font-size:.85rem; font-weight:700; color:var(--white); letter-spacing:-.01em; margin-bottom:4px; }
 .cbody .meta { font-size:.62rem; color:var(--dim); letter-spacing:.04em; }
 .cbody .meta .d { color:var(--gold); margin:0 5px; opacity:.4; }
 .curl { font-size:.58rem; color:var(--dim); opacity:0; transition:opacity .2s; white-space:nowrap; }
@@ -187,7 +185,7 @@ footer {
 }
 
 #tg-modal::after {
-  content:&#39;&#39;;
+  content:'';
   position:absolute; inset:0;
   background: repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,.04) 3px,rgba(0,0,0,.04) 4px);
   pointer-events:none; border-radius:8px; z-index:0;
@@ -214,7 +212,7 @@ footer {
   display: flex; align-items: center; justify-content: center;
   color: var(--dim);
   font-size: .72rem;
-  font-family: &#39;Space Mono&#39;, monospace;
+  font-family: 'Space Mono', monospace;
   transition: background .2s, border-color .2s, color .2s;
   z-index: 2;
 }
@@ -245,7 +243,7 @@ footer {
   position: relative;
 }
 .tg-icon::before {
-  content:&#39;&#39;;
+  content:'';
   position: absolute; inset: -6px;
   border-radius: 50%;
   border: 1px solid rgba(42,171,238,.25);
@@ -275,7 +273,7 @@ footer {
   50%    {opacity:.2;box-shadow:none}
 }
 .tg-title {
-  font-family: &#39;Space Mono&#39;, monospace;
+  font-family: 'Space Mono', monospace;
   font-size: 1.05rem; font-weight: 700;
   color: var(--white); letter-spacing: -.02em;
 }
@@ -318,7 +316,7 @@ footer {
   background: linear-gradient(135deg, var(--tg), var(--tg2));
   border: none; border-radius: 5px;
   color: #fff;
-  font-family: &#39;Space Mono&#39;, monospace;
+  font-family: 'Space Mono', monospace;
   font-size: .74rem; font-weight: 700; letter-spacing: .02em;
   text-decoration: none;
   cursor: none;
@@ -339,7 +337,7 @@ footer {
   background: linear-gradient(135deg, #4f5bd5, var(--ig3), var(--ig), var(--ig2));
   border: none; border-radius: 5px;
   color: #fff;
-  font-family: &#39;Space Mono&#39;, monospace;
+  font-family: 'Space Mono', monospace;
   font-size: .74rem; font-weight: 700; letter-spacing: .02em;
   text-decoration: none;
   cursor: none;
@@ -358,7 +356,7 @@ footer {
   background: transparent;
   border: 1px solid var(--border); border-radius: 5px;
   color: var(--dim);
-  font-family: &#39;Space Mono&#39;, monospace; font-size: .68rem;
+  font-family: 'Space Mono', monospace; font-size: .68rem;
   cursor: none;
   white-space: nowrap;
   transition: border-color .2s, color .2s, background .2s;
@@ -373,7 +371,7 @@ footer {
   display: flex; align-items: center; gap: 9px;
   cursor: none; user-select: none;
 }
-.tg-dont input[type=&#34;checkbox&#34;] {
+.tg-dont input[type="checkbox"] {
   appearance: none; -webkit-appearance: none;
   width: 14px; height: 14px;
   border: 1px solid var(--border); border-radius: 3px;
@@ -381,11 +379,11 @@ footer {
   position: relative;
   transition: border-color .2s, background .2s;
 }
-.tg-dont input[type=&#34;checkbox&#34;]:checked {
+.tg-dont input[type="checkbox"]:checked {
   background: var(--tg); border-color: var(--tg);
 }
-.tg-dont input[type=&#34;checkbox&#34;]:checked::after {
-  content:&#39;&#39;;
+.tg-dont input[type="checkbox"]:checked::after {
+  content:'';
   position: absolute; left: 3px; top: 1px;
   width: 5px; height: 8px;
   border: 2px solid #fff;
@@ -454,7 +452,7 @@ footer {
 
 /* gold top shimmer bar */
 #pwa-banner::before {
-  content:&#39;&#39;;
+  content:'';
   display: block;
   height: 2px;
   background: linear-gradient(90deg, transparent 0%, var(--gold2) 20%, var(--gold) 50%, #ffe88a 65%, var(--gold2) 80%, transparent 100%);
@@ -465,7 +463,7 @@ footer {
 
 /* inner radial glow */
 #pwa-banner::after {
-  content:&#39;&#39;;
+  content:'';
   position: absolute; inset: 0;
   border-radius: 18px;
   background:
@@ -486,7 +484,7 @@ footer {
   display: flex; align-items: center; justify-content: center;
   color: var(--dim);
   font-size: .62rem;
-  font-family: &#39;Space Mono&#39;, monospace;
+  font-family: 'Space Mono', monospace;
   line-height: 1;
   transition: background .2s, border-color .2s, color .2s, transform .2s;
   z-index: 10;
@@ -524,7 +522,7 @@ footer {
 }
 .pwa-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .pwa-icon::after {
-  content:&#39;&#39;;
+  content:'';
   position: absolute; inset: 0;
   background: linear-gradient(120deg, transparent 25%, rgba(255,255,255,.22) 48%, transparent 72%);
   background-size: 200% 100%;
@@ -552,7 +550,7 @@ footer {
   animation: ldot 1.4s ease-in-out infinite;
 }
 .pwa-title {
-  font-family: &#39;Space Mono&#39;, monospace;
+  font-family: 'Space Mono', monospace;
   font-size: .9rem; font-weight: 700;
   color: var(--white); letter-spacing: -.02em;
   margin-bottom: 5px;
@@ -567,7 +565,7 @@ footer {
   margin-top: 7px;
 }
 .pwa-badge {
-  font-size: .48rem; font-family: &#39;JetBrains Mono&#39;, monospace;
+  font-size: .48rem; font-family: 'JetBrains Mono', monospace;
   letter-spacing: .05em; text-transform: uppercase;
   color: var(--gold);
   background: rgba(245,200,66,.08);
@@ -590,7 +588,7 @@ footer {
   background: linear-gradient(135deg, var(--gold) 0%, var(--gold2) 100%);
   border: none; border-radius: 10px;
   color: #080808;
-  font-family: &#39;Space Mono&#39;, monospace;
+  font-family: 'Space Mono', monospace;
   font-size: .68rem; font-weight: 700; letter-spacing: .05em;
   cursor: none; white-space: nowrap;
   position: relative; overflow: hidden;
@@ -601,7 +599,7 @@ footer {
   transition: transform .15s, box-shadow .2s;
 }
 #pwa-install-btn::before {
-  content:&#39;&#39;;
+  content:'';
   position: absolute; inset: 0;
   background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.3) 50%, transparent 70%);
   background-size: 200% 100%;
@@ -627,333 +625,277 @@ footer {
   .pwa-title { font-size: .82rem; }
   .pwa-badges { display: none; }
 }
-    </style>
-  </head>
-  <body>
-    <div id="cur">
-    </div>
-    <!-- ══ PWA INSTALL BANNER ══ -->
-    <div id="pwa-banner">
-      <!-- close X button -->
-      <button id="pwa-close-btn" onmouseenter="bc()" onmouseleave="sc()" onclick="document.getElementById(&#39;pwa-banner&#39;).classList.remove(&#39;show&#39;); deferredPrompt = null;" aria-label="Close">
-        ✕
-      </button>
-      <div class="pwa-inner">
-        <!-- icon -->
-        <div class="pwa-icon-wrap">
-          <div class="pwa-icon">
-            <img src="https://i.postimg.cc/KzTy05Wm/IMG-20250301-092318-614.jpg" alt="RolexCoderZ" />
-          </div>
-          <div class="pwa-icon-ring">
-          </div>
-        </div>
-        <!-- text -->
-        <div class="pwa-text">
-          <div class="pwa-eyebrow">
-            <span class="pwa-eyebrow-dot"></span>
-            install_app
-          </div>
-          <div class="pwa-title">
-            RolexCoderZ
-          </div>
-          <div class="pwa-sub">
-            Fast · Education · Free
-          </div>
-        </div>
-        <!-- install btn -->
-        <div class="pwa-actions">
-          <button id="pwa-install-btn" onmouseenter="bc()" onmouseleave="sc()">
-            <svg viewBox="0 0 24 24">
-              <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z">
-              </path>
-            </svg>
-            <span>            Install
-</span>
-          </button>
-        </div>
+</style>
+</head>
+<body>
+
+<div id="cur"></div>
+
+<!-- ══ PWA INSTALL BANNER ══ -->
+<div id="pwa-banner">
+  <!-- close X button -->
+  <button id="pwa-close-btn" onmouseenter="bc()" onmouseleave="sc()" onclick="document.getElementById('pwa-banner').classList.remove('show'); deferredPrompt = null;" aria-label="Close">✕</button>
+
+  <div class="pwa-inner">
+    <!-- icon -->
+    <div class="pwa-icon-wrap">
+      <div class="pwa-icon">
+        <img src="https://i.postimg.cc/KzTy05Wm/IMG-20250301-092318-614.jpg" alt="RolexCoderZ">
       </div>
-      <!-- hidden btn kept for JS compatibility -->
-      <button id="pwa-dismiss-btn" style="display:none">
+      <div class="pwa-icon-ring"></div>
+    </div>
+
+    <!-- text -->
+    <div class="pwa-text">
+      <div class="pwa-eyebrow">
+        <span class="pwa-eyebrow-dot"></span>
+        install_app
+      </div>
+      <div class="pwa-title">RolexCoderZ</div>
+      <div class="pwa-sub">Fast · Education · Free</div>
+
+    </div>
+
+    <!-- install btn -->
+    <div class="pwa-actions">
+      <button id="pwa-install-btn" onmouseenter="bc()" onmouseleave="sc()">
+        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+        <span>Install</span>
       </button>
     </div>
-    <!-- ════════════════════════ -->
-    <!-- ══ TELEGRAM POPUP ══ -->
-    <div id="tg-overlay">
-      <div id="tg-modal">
-        <div class="tg-bar">
+  </div>
+
+  <!-- hidden btn kept for JS compatibility -->
+  <button id="pwa-dismiss-btn" style="display:none"></button>
+</div>
+<!-- ════════════════════════ -->
+
+<!-- ══ TELEGRAM POPUP ══ -->
+<div id="tg-overlay">
+  <div id="tg-modal">
+    <div class="tg-bar"></div>
+    <button id="tg-close" onmouseenter="bc()" onmouseleave="sc()" onclick="closePopup()">✕</button>
+
+    <div class="tg-inner">
+
+      <div class="tg-head">
+        <div class="tg-icon">
+          <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
         </div>
-        <button id="tg-close" onmouseenter="bc()" onmouseleave="sc()" onclick="closePopup()">
-          ✕
-        </button>
-        <div class="tg-inner">
-          <div class="tg-head">
-            <div class="tg-icon">
-              <svg viewBox="0 0 24 24">
-                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z">
-                </path>
-              </svg>
-            </div>
-            <div class="tg-title-block">
-              <div class="tg-eyebrow">
-                <span class="live-dot"></span>
-                website_updates
-              </div>
-              <div class="tg-title">
-                Join our Telegram!
-              </div>
-            </div>
-          </div>
-          <div class="tg-desc">
-            Website updates, new platforms, announcements &amp; more — sabse pehle Telegram pe milega.
-            <br />
-            <br />
-            Telegram channel ban ho gaya hai — koi issue ho toh Instagram pe message karo. 🚀
-          </div>
-          <!-- countdown bar -->
-          <div class="tg-prog-wrap">
-            <div class="tg-prog-row">
-              <span class="tg-prog-lbl">              auto_close_in
-</span>
-              <span id="tg-cd">              8s
-</span>
-            </div>
-            <div class="tg-prog-track">
-              <div id="tg-fill" style="--d:8s">
-              </div>
-            </div>
-          </div>
-          <!-- buttons -->
-          <div class="tg-actions">
-            <a class="btn-join" href="https://t.me/+R2qw9858zEoyNDQ1" onclick="onJoin()" onmouseenter="tgbc()" onmouseleave="sc()" target="_blank">            <svg viewBox="0 0 24 24">
-              <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z">
-              </path>
-            </svg>
-            Join Now ↗
-</a>
-            <button class="btn-later" onmouseenter="bc()" onmouseleave="sc()" onclick="closePopup()">
-              Maybe Later
-            </button>
-          </div>
-          <!-- instagram alt contact -->
-          <a class="btn-insta" href="https://www.instagram.com/rolexcoderz.in?igsh=OWdjMjhuZjNmdzk=" onmouseenter="igbc()" onmouseleave="sc()" rel="noopener" style="margin-bottom:16px;" target="_blank">          <svg viewBox="0 0 24 24">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z">
-            </path>
-          </svg>
-          Message on Instagram ↗
-</a>
-          <!-- don't show again -->
-          <div class="tg-dont" onmouseenter="bc()" onmouseleave="sc()">
-            <input type="checkbox" id="dontshow" />
-            <label for="dontshow">
-              Don&#39;t show me again today
-            </label>
-          </div>
+        <div class="tg-title-block">
+          <div class="tg-eyebrow"><span class="live-dot"></span>website_updates</div>
+          <div class="tg-title">Join our Telegram!</div>
         </div>
       </div>
+
+      <div class="tg-desc">
+        Website updates, new platforms, announcements &amp; more — sabse pehle Telegram pe milega.
+        <br><br>
+        Telegram channel ban ho gaya hai — koi issue ho toh Instagram pe message karo. 🚀
+      </div>
+
+      <!-- countdown bar -->
+      <div class="tg-prog-wrap">
+        <div class="tg-prog-row">
+          <span class="tg-prog-lbl">auto_close_in</span>
+          <span id="tg-cd">8s</span>
+        </div>
+        <div class="tg-prog-track">
+          <div id="tg-fill" style="--d:8s"></div>
+        </div>
+      </div>
+
+      <!-- buttons -->
+      <div class="tg-actions">
+        <a href="https://t.me/+R2qw9858zEoyNDQ1"
+           class="btn-join"
+           target="_blank"
+           onmouseenter="tgbc()" onmouseleave="sc()"
+           onclick="onJoin()">
+          <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          Join Now ↗
+        </a>
+        <button class="btn-later"
+                onmouseenter="bc()" onmouseleave="sc()"
+                onclick="closePopup()">Maybe Later</button>
+      </div>
+
+      <!-- instagram alt contact -->
+      <a href="https://www.instagram.com/rolexcoderz.in?igsh=OWdjMjhuZjNmdzk="
+         class="btn-insta"
+         target="_blank"
+         rel="noopener"
+         style="margin-bottom:16px;"
+         onmouseenter="igbc()" onmouseleave="sc()">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Message on Instagram ↗
+      </a>
+
+      <!-- don't show again -->
+      <div class="tg-dont" onmouseenter="bc()" onmouseleave="sc()">
+        <input type="checkbox" id="dontshow">
+        <label for="dontshow">Don't show me again today</label>
+      </div>
+
     </div>
-    <!-- ══════════════════════ -->
-    <header>
-      <div class="hrow">
-        <span class="logo">        Rolex
-        <em>        CoderZ
-</em>
-</span>
-        <span class="blink"></span>
+  </div>
+</div>
+<!-- ══════════════════════ -->
+
+<header>
+  <div class="hrow">
+    <span class="logo">Rolex<em>CoderZ</em></span>
+    <span class="blink"></span>
+  </div>
+  <div class="hsub"><s>~/</s>platforms</div>
+</header>
+
+<div class="wrap">
+  <div class="sep"></div>
+
+  <div class="intro">
+    <div class="prompt">select_platform</div>
+    <h2>Pick your<br><span class="a">institute.</span></h2>
+    <p>Direct access to course platforms.<br>Click a card to open.</p>
+  </div>
+
+  <div class="sep"></div>
+
+  <div class="cards">
+
+    <a href="https://rolexcoderz.com/PW" class="card" target="_blank"
+       onmouseenter="bc()" onmouseleave="sc()">
+      <span class="cnum">01</span>
+      <img class="cimg"
+        src="https://upload.wikimedia.org/wikipedia/commons/7/76/Physics_wallah_logo.jpg"
+        alt="PW" onerror="this.style.display='none'">
+      <div class="cbody">
+        <h3>Physics Wallah</h3>
+        <div class="meta">ALL Classes<span class="d">·</span>Education</div>
       </div>
-      <div class="hsub">
-        <s>        ~/
-</s>
-        platforms
+      <span class="curl">rolexcoderz.com/PW ↗</span>
+    </a>
+
+    <a href="https://rolexcoderz.com/VT" class="card" target="_blank"
+       onmouseenter="bc()" onmouseleave="sc()">
+      <span class="cnum">02</span>
+      <img class="cimg"
+        src="https://nocache-appxdb-v2.classx.co.in/subject/2026-02-24-0.8461171343418096.png"
+        alt="VA" onerror="this.style.display='none'">
+      <div class="cbody">
+        <h3>Vibrant Academy</h3>
+        <div class="meta">JEE<span class="d">·</span>Education</div>
       </div>
-    </header>
-    <div class="wrap">
-      <div class="sep">
+      <span class="curl">rolexcoderz.com/VT ↗</span>
+    </a>
+
+    <a href="https://RolexCoderZ.com/NT" class="card" target="_blank"
+       onmouseenter="bc()" onmouseleave="sc()">
+      <span class="cnum">03</span>
+      <img class="cimg"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1mUiY27Zw1lOwzgyGbwpdWlVgzDEZGmrfjfZqT0XGew&s"
+        alt="NT" onerror="this.style.display='none'">
+      <div class="cbody">
+        <h3>Next Toppers</h3>
+        <div class="meta">Board Exams<span class="d">·</span>Education</div>
       </div>
-      <div class="intro">
-        <div class="prompt">
-          select_platform
-        </div>
-        <h2>
-          Pick your
-          <br />
-          <span class="a">          institute.
-</span>
-        </h2>
-        <p>
-          Direct access to course platforms.
-          <br />
-          Click a card to open.
-        </p>
+      <span class="curl">rolexcoderz.com/NT ↗</span>
+    </a>
+
+    <a href="https://RolexCoderZ.com/MissionJeet" class="card" target="_blank"
+       onmouseenter="bc()" onmouseleave="sc()">
+      <span class="cnum">04</span>
+      <img class="cimg"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXhmAX6UC18CYhwU2a6f7gn9E5WE0g4hzSQK2zyH_nVA&s"
+        alt="MJ" onerror="this.style.display='none'">
+      <div class="cbody">
+        <h3>Mission Jeet</h3>
+        <div class="meta">JEE / NEET<span class="d">·</span>Education</div>
       </div>
-      <div class="sep">
+      <span class="curl">rolexcoderz.com/MissionJeet ↗</span>
+    </a>
+
+    <a href="https://rolexcoderz.com/AR/" class="card" target="_blank"
+       onmouseenter="bc()" onmouseleave="sc()">
+      <span class="cnum">05</span>
+      <img class="cimg"
+        src="https://i.postimg.cc/L5t0Dv7p/favicon.png"
+        alt="AR" onerror="this.style.display='none'">
+      <div class="cbody">
+        <h3>English Speaking Course by Aleena Rais</h3>
+        <div class="meta">Grammar<span class="d">·</span>Education</div>
       </div>
-      <div class="cards">
-        <a class="card" href="https://rolexcoderz.com/PW" onmouseenter="bc()" onmouseleave="sc()" target="_blank">        <span class="cnum">        01
-</span>
-        <img class="cimg" src="https://upload.wikimedia.org/wikipedia/commons/7/76/Physics_wallah_logo.jpg" alt="PW" onerror="this.style.display=&#39;none&#39;" />
-        <div class="cbody">
-          <h3>
-            Physics Wallah
-          </h3>
-          <div class="meta">
-            ALL Classes
-            <span class="d">            ·
-</span>
-            Education
-          </div>
-        </div>
-        <span class="curl">        rolexcoderz.com/PW ↗
-</span>
-</a>
-        <a class="card" href="https://rolexcoderz.com/VT" onmouseenter="bc()" onmouseleave="sc()" target="_blank">        <span class="cnum">        02
-</span>
-        <img class="cimg" src="https://nocache-appxdb-v2.classx.co.in/subject/2026-02-24-0.8461171343418096.png" alt="VA" onerror="this.style.display=&#39;none&#39;" />
-        <div class="cbody">
-          <h3>
-            Vibrant Academy
-          </h3>
-          <div class="meta">
-            JEE
-            <span class="d">            ·
-</span>
-            Education
-          </div>
-        </div>
-        <span class="curl">        rolexcoderz.com/VT ↗
-</span>
-</a>
-        <a class="card" href="https://RolexCoderZ.com/NT" onmouseenter="bc()" onmouseleave="sc()" target="_blank">        <span class="cnum">        03
-</span>
-        <img class="cimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1mUiY27Zw1lOwzgyGbwpdWlVgzDEZGmrfjfZqT0XGew&amp;s" alt="NT" onerror="this.style.display=&#39;none&#39;" />
-        <div class="cbody">
-          <h3>
-            Next Toppers
-          </h3>
-          <div class="meta">
-            Board Exams
-            <span class="d">            ·
-</span>
-            Education
-          </div>
-        </div>
-        <span class="curl">        rolexcoderz.com/NT ↗
-</span>
-</a>
-        <a class="card" href="https://RolexCoderZ.com/MissionJeet" onmouseenter="bc()" onmouseleave="sc()" target="_blank">        <span class="cnum">        04
-</span>
-        <img class="cimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXhmAX6UC18CYhwU2a6f7gn9E5WE0g4hzSQK2zyH_nVA&amp;s" alt="MJ" onerror="this.style.display=&#39;none&#39;" />
-        <div class="cbody">
-          <h3>
-            Mission Jeet
-          </h3>
-          <div class="meta">
-            JEE / NEET
-            <span class="d">            ·
-</span>
-            Education
-          </div>
-        </div>
-        <span class="curl">        rolexcoderz.com/MissionJeet ↗
-</span>
-</a>
-        <a class="card" href="https://rolexcoderz.com/AR/" onmouseenter="bc()" onmouseleave="sc()" target="_blank">        <span class="cnum">        05
-</span>
-        <img class="cimg" src="https://i.postimg.cc/L5t0Dv7p/favicon.png" alt="AR" onerror="this.style.display=&#39;none&#39;" />
-        <div class="cbody">
-          <h3>
-            English Speaking Course by Aleena Rais
-          </h3>
-          <div class="meta">
-            Grammar
-            <span class="d">            ·
-</span>
-            Education
-          </div>
-        </div>
-        <span class="curl">        rolexcoderz.com/AleenaRais ↗
-</span>
-</a>
-        <a class="card" href="#" onmouseenter="bc()" onmouseleave="sc()" target="_blank">        <span class="cnum">        06
-</span>
-        <img class="cimg" src="https://cdn.brandfetch.io/ide4H8OK32/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&amp;t=1681979686468" alt="UC" onerror="this.style.display=&#39;none&#39;" />
-        <div class="cbody">
-          <h3>
-            Unacademy
-          </h3>
-          <div class="meta">
-            Neet/Jee
-            <span class="d">            ·
-</span>
-            Education
-          </div>
-        </div>
-        <span class="curl">        rolexcoderz.com/UC ↗
-</span>
-</a>
-        <a class="card" href="https://rolexcoderz.com/Pi/" onmouseenter="bc()" onmouseleave="sc()" target="_blank">        <span class="cnum">        07
-</span>
-        <img class="cimg" src="https://upload.wikimedia.org/wikipedia/commons/7/76/Physics_wallah_logo.jpg" alt="Pi" onerror="this.style.display=&#39;none&#39;" />
-        <div class="cbody">
-          <h3>
-            PW OTT - Pi
-          </h3>
-          <div class="meta">
-            OTT
-            <span class="d">            ·
-</span>
-            Education
-          </div>
-        </div>
-        <span class="curl">        rolexcoderz.com/Pi ↗
-</span>
-</a>
-        <a class="card" href="#" onmouseenter="bc()" onmouseleave="sc()" target="_blank">        <span class="cnum">        08
-</span>
-        <img class="cimg" src="https://wsrv.nl/?url=https%3A%2F%2F69b912be004e465fbcbf3c65.storage.fermion.app%2Fpublic-cached%2Fschool-pic%2Fschool-pic-unique-id%2Fc3kjrgmzqduj4bl0zfdkl&amp;w=64&amp;fit=cover&amp;h=64&amp;q=82&amp;output=webp" alt="Pi" onerror="this.style.display=&#39;none&#39;" />
-        <div class="cbody">
-          <h3>
-            THE SKILLED BRAINS
-          </h3>
-          <div class="meta">
-            Skill
-            <span class="d">            ·
-</span>
-            Education
-          </div>
-        </div>
-        <span class="curl">        rolexcoderz.com/SB ↗
-</span>
-</a>
+      <span class="curl">rolexcoderz.com/AleenaRais ↗</span>
+    </a>
+    
+    <a href="#" class="card" target="_blank"
+       onmouseenter="bc()" onmouseleave="sc()">
+      <span class="cnum">06</span>
+      <img class="cimg"
+        src="https://cdn.brandfetch.io/ide4H8OK32/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1681979686468"
+        alt="UC" onerror="this.style.display='none'">
+      <div class="cbody">
+        <h3>Unacademy</h3>
+        <div class="meta">Neet/Jee<span class="d">·</span>Education</div>
       </div>
-    </div>
-    <footer>
-      <span class="fl">      <strong>      RolexCoderZ
-</strong>
-      // 2026
-</span>
-      <span class="fr">      v1.0.0
-</span>
-    </footer>
-    <script>
-      /* ── Custom cursor ── */
-const cur = document.getElementById(&#39;cur&#39;);
-document.addEventListener(&#39;mousemove&#39;, e =&gt; {
-  cur.style.left = e.clientX + &#39;px&#39;;
-  cur.style.top  = e.clientY + &#39;px&#39;;
+      <span class="curl">rolexcoderz.com/UC ↗</span>
+    </a>
+    
+    <a href="https://rolexcoderz.com/Pi/" class="card" target="_blank"
+       onmouseenter="bc()" onmouseleave="sc()">
+      <span class="cnum">07</span>
+      <img class="cimg"
+        src="https://upload.wikimedia.org/wikipedia/commons/7/76/Physics_wallah_logo.jpg"
+        alt="Pi" onerror="this.style.display='none'">
+      <div class="cbody">
+        <h3>PW OTT - Pi</h3>
+        <div class="meta">OTT<span class="d">·</span>Education</div>
+      </div>
+      <span class="curl">rolexcoderz.com/Pi ↗</span>
+    </a>
+    
+    <a href="#" class="card" target="_blank"
+       onmouseenter="bc()" onmouseleave="sc()">
+      <span class="cnum">08</span>
+      <img class="cimg"
+        src="https://wsrv.nl/?url=https%3A%2F%2F69b912be004e465fbcbf3c65.storage.fermion.app%2Fpublic-cached%2Fschool-pic%2Fschool-pic-unique-id%2Fc3kjrgmzqduj4bl0zfdkl&w=64&fit=cover&h=64&q=82&output=webp"
+        alt="Pi" onerror="this.style.display='none'">
+      <div class="cbody">
+        <h3>THE SKILLED BRAINS</h3>
+        <div class="meta">Skill<span class="d">·</span>Education</div>
+      </div>
+      <span class="curl">rolexcoderz.com/SB ↗</span>
+    </a>
+   
+
+  </div>
+</div>
+
+<footer>
+  <span class="fl"><strong>RolexCoderZ</strong> // 2026</span>
+  <span class="fr">v1.0.0</span>
+</footer>
+
+<script>
+/* ── Custom cursor ── */
+const cur = document.getElementById('cur');
+document.addEventListener('mousemove', e => {
+  cur.style.left = e.clientX + 'px';
+  cur.style.top  = e.clientY + 'px';
 });
-function bc()   { cur.classList.remove(&#39;tgbig&#39;,&#39;igbig&#39;); cur.classList.add(&#39;big&#39;); }
-function tgbc() { cur.classList.remove(&#39;big&#39;,&#39;igbig&#39;);   cur.classList.add(&#39;tgbig&#39;); }
-function igbc() { cur.classList.remove(&#39;big&#39;,&#39;tgbig&#39;);   cur.classList.add(&#39;igbig&#39;); }
-function sc()   { cur.classList.remove(&#39;big&#39;,&#39;tgbig&#39;,&#39;igbig&#39;); }
+function bc()   { cur.classList.remove('tgbig','igbig'); cur.classList.add('big'); }
+function tgbc() { cur.classList.remove('big','igbig');   cur.classList.add('tgbig'); }
+function igbc() { cur.classList.remove('big','tgbig');   cur.classList.add('igbig'); }
+function sc()   { cur.classList.remove('big','tgbig','igbig'); }
 
 /* ── Popup logic ── */
-const STORAGE_KEY   = &#39;rcz_tg_hide_date&#39;;
+const STORAGE_KEY   = 'rcz_tg_hide_date';
 const AUTO_SEC      = 8;
 
-const overlay  = document.getElementById(&#39;tg-overlay&#39;);
-const cdEl     = document.getElementById(&#39;tg-cd&#39;);
-const fillEl   = document.getElementById(&#39;tg-fill&#39;);
-const checkbox = document.getElementById(&#39;dontshow&#39;);
+const overlay  = document.getElementById('tg-overlay');
+const cdEl     = document.getElementById('tg-cd');
+const fillEl   = document.getElementById('tg-fill');
+const checkbox = document.getElementById('dontshow');
 
 let autoTimer, cdInterval, timeLeft;
 
@@ -971,19 +913,19 @@ function saveHide() {
 }
 
 function openPopup() {
-  overlay.classList.add(&#39;show&#39;);
-  fillEl.style.animation = &#39;none&#39;;
+  overlay.classList.add('show');
+  fillEl.style.animation = 'none';
   void fillEl.offsetWidth;
-  fillEl.style.setProperty(&#39;--d&#39;, AUTO_SEC + &#39;s&#39;);
-  fillEl.style.animation = &#39;&#39;;
+  fillEl.style.setProperty('--d', AUTO_SEC + 's');
+  fillEl.style.animation = '';
 
   timeLeft = AUTO_SEC;
-  cdEl.textContent = timeLeft + &#39;s&#39;;
+  cdEl.textContent = timeLeft + 's';
 
-  cdInterval = setInterval(() =&gt; {
+  cdInterval = setInterval(() => {
     timeLeft--;
-    cdEl.textContent = timeLeft + &#39;s&#39;;
-    if (timeLeft &lt;= 0) clearInterval(cdInterval);
+    cdEl.textContent = timeLeft + 's';
+    if (timeLeft <= 0) clearInterval(cdInterval);
   }, 1000);
 
   autoTimer = setTimeout(closePopup, AUTO_SEC * 1000);
@@ -993,7 +935,7 @@ function closePopup() {
   if (checkbox.checked) saveHide();
   clearTimeout(autoTimer);
   clearInterval(cdInterval);
-  overlay.classList.remove(&#39;show&#39;);
+  overlay.classList.remove('show');
 }
 
 function onJoin() {
@@ -1003,99 +945,100 @@ function onJoin() {
   setTimeout(closePopup, 400);
 }
 
-overlay.addEventListener(&#39;click&#39;, e =&gt; {
+overlay.addEventListener('click', e => {
   if (e.target === overlay) closePopup();
 });
 
-window.addEventListener(&#39;load&#39;, () =&gt; {
+window.addEventListener('load', () => {
   if (shouldShow()) setTimeout(openPopup, 1300);
 });
 
 /* ── PWA Install Banner ── */
 let deferredPrompt = null;
-const pwaBanner     = document.getElementById(&#39;pwa-banner&#39;);
-const pwaInstallBtn = document.getElementById(&#39;pwa-install-btn&#39;);
-const pwaDismissBtn = document.getElementById(&#39;pwa-dismiss-btn&#39;);
+const pwaBanner     = document.getElementById('pwa-banner');
+const pwaInstallBtn = document.getElementById('pwa-install-btn');
+const pwaDismissBtn = document.getElementById('pwa-dismiss-btn');
 
-window.addEventListener(&#39;beforeinstallprompt&#39;, e =&gt; {
+window.addEventListener('beforeinstallprompt', e => {
   e.preventDefault();
   deferredPrompt = e;
   // Show banner after 2.5s (after page settles)
-  setTimeout(() =&gt; {
-    pwaBanner.classList.add(&#39;show&#39;);
+  setTimeout(() => {
+    pwaBanner.classList.add('show');
   }, 2500);
 });
 
-pwaInstallBtn.addEventListener(&#39;click&#39;, async () =&gt; {
+pwaInstallBtn.addEventListener('click', async () => {
   if (!deferredPrompt) return;
   deferredPrompt.prompt();
   const { outcome } = await deferredPrompt.userChoice;
   deferredPrompt = null;
-  pwaBanner.classList.remove(&#39;show&#39;);
+  pwaBanner.classList.remove('show');
 });
 
-pwaDismissBtn.addEventListener(&#39;click&#39;, () =&gt; {
-  pwaBanner.classList.remove(&#39;show&#39;);
+pwaDismissBtn.addEventListener('click', () => {
+  pwaBanner.classList.remove('show');
   deferredPrompt = null;
 });
 
-window.addEventListener(&#39;appinstalled&#39;, () =&gt; {
-  pwaBanner.classList.remove(&#39;show&#39;);
+window.addEventListener('appinstalled', () => {
+  pwaBanner.classList.remove('show');
   deferredPrompt = null;
 });
 
 /* ── PWA Manifest (inline via blob) ── */
 const manifest = {
-  name: &#34;RolexCoderZ&#34;,
-  short_name: &#34;RolexCoderZ&#34;,
-  description: &#34;Direct access to all course platforms.&#34;,
-  start_url: &#34;/&#34;,
-  display: &#34;standalone&#34;,
-  background_color: &#34;#0c0c0e&#34;,
-  theme_color: &#34;#f5c842&#34;,
+  name: "RolexCoderZ",
+  short_name: "RolexCoderZ",
+  description: "Direct access to all course platforms.",
+  start_url: "/",
+  display: "standalone",
+  background_color: "#0c0c0e",
+  theme_color: "#f5c842",
   icons: [
     {
-      src: &#34;https://i.postimg.cc/KzTy05Wm/IMG-20250301-092318-614.jpg&#34;,
-      sizes: &#34;192x192&#34;,
-      type: &#34;image/jpeg&#34;
+      src: "https://i.postimg.cc/KzTy05Wm/IMG-20250301-092318-614.jpg",
+      sizes: "192x192",
+      type: "image/jpeg"
     },
     {
-      src: &#34;https://i.postimg.cc/KzTy05Wm/IMG-20250301-092318-614.jpg&#34;,
-      sizes: &#34;512x512&#34;,
-      type: &#34;image/jpeg&#34;
+      src: "https://i.postimg.cc/KzTy05Wm/IMG-20250301-092318-614.jpg",
+      sizes: "512x512",
+      type: "image/jpeg"
     }
   ]
 };
-const manifestBlob = new Blob([JSON.stringify(manifest)], { type: &#39;application/json&#39; });
+const manifestBlob = new Blob([JSON.stringify(manifest)], { type: 'application/json' });
 const manifestURL  = URL.createObjectURL(manifestBlob);
-const manifestLink = document.createElement(&#39;link&#39;);
-manifestLink.rel   = &#39;manifest&#39;;
+const manifestLink = document.createElement('link');
+manifestLink.rel   = 'manifest';
 manifestLink.href  = manifestURL;
 document.head.appendChild(manifestLink);
 
 /* ── Service Worker (inline via blob) ── */
 const swCode = `
-const CACHE = &#39;rcz-v1&#39;;
-self.addEventListener(&#39;install&#39;, e =&gt; {
+const CACHE = 'rcz-v1';
+self.addEventListener('install', e => {
   e.waitUntil(
-    caches.open(CACHE).then(c =&gt; c.addAll([&#39;/&#39;]))
+    caches.open(CACHE).then(c => c.addAll(['/']))
   );
   self.skipWaiting();
 });
-self.addEventListener(&#39;activate&#39;, e =&gt; {
+self.addEventListener('activate', e => {
   e.waitUntil(clients.claim());
 });
-self.addEventListener(&#39;fetch&#39;, e =&gt; {
+self.addEventListener('fetch', e => {
   e.respondWith(
-    fetch(e.request).catch(() =&gt; caches.match(e.request))
+    fetch(e.request).catch(() => caches.match(e.request))
   );
 });
 `;
-if (&#39;serviceWorker&#39; in navigator) {
-  const swBlob = new Blob([swCode], { type: &#39;application/javascript&#39; });
+if ('serviceWorker' in navigator) {
+  const swBlob = new Blob([swCode], { type: 'application/javascript' });
   const swURL  = URL.createObjectURL(swBlob);
-  navigator.serviceWorker.register(swURL, { scope: &#39;/&#39; }).catch(() =&gt; {});
+  navigator.serviceWorker.register(swURL, { scope: '/' }).catch(() => {});
 }
-    </script>
-  </body>
+</script>
+
+</body>
 </html>
